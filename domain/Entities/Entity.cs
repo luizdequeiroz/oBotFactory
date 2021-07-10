@@ -9,7 +9,7 @@ namespace domain.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public DateTime RegisterDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public DateTime RegisterDate { get; set; } = DateTime.Now;
+        public DateTime? UpdateDate { get; set; } = null;
     }
 }
