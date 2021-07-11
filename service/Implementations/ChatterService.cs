@@ -21,11 +21,10 @@ namespace service.Implementations
 
         public Chatter SetNew(Chatter chatter)
         {
-            var chatterInserted = chatterRepository.SelectAll().FirstOrDefault(c => c.Name == chatter.Name);
-            if (chatterInserted == null)
-                chatterInserted = chatterRepository.InsertNew(chatter);
-
-            return chatterInserted;
+            var _chatter = chatterRepository.SelectAll().FirstOrDefault(c => c.Name == chatter.Name);
+            if (_chatter == null)
+                return chatterRepository.InsertNew(chatter);
+            return null;
         }
     }
 }
