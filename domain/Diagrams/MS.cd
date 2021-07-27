@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="domain.Entities.Armor" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAABAEAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Equipment\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Capability" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Capability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Descripted" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Disadvantage" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Disadvantage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Entity" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Equipment" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Equipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.GenericAdvantage" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\GenericAdvantage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Item" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Equipment\Manageable\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Manageable" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Entities\Entity\Descripted\Equipment\Manageable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.MS" Collapsed="true">
+    <Position X="11.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAYAQAAgCEggAkAAARAAQGAAASABGAAAAAAAQBA=</HashCode>
+      <FileName>Entities\Entity\MS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetArmor" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAEAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetCapabilty" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetCapability.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetDisadvantage" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAEBAAACAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetDisadvantage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetGenericAdvantage" Collapsed="true">
+    <Position X="21" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetGenericAdvantage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetItem" Collapsed="true">
+    <Position X="23.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAUAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetRelationship" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetSkill" Collapsed="true">
+    <Position X="14.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetSkill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.SheetWeapon" Collapsed="true">
+    <Position X="18.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAQAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable\SheetRelationship\SheetWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Skill" Collapsed="true">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Skill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Testable" Collapsed="true">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Testable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="domain.Entities.Weapon" Collapsed="true">
+    <Position X="6.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Entity\Descripted\Equipment\Manageable\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

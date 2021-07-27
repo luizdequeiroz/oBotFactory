@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Remix.Extensions" Version="1.0.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\domain\domain.csproj" />
   </ItemGroup>
 

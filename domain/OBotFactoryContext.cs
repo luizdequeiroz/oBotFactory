@@ -12,6 +12,20 @@ namespace domain
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Chatter> Chatters { get; set; }
+        public DbSet<MS> MSs { get; set; }
+        public DbSet<SheetCapabilty> SheetCapabilties { get; set; }
+        public DbSet<Capability> Capabilities { get; set; }
+        public DbSet<SheetSkill> SheetSkills { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<SheetGenericAdvantage> SheetGenericAdvantages { get; set; }
+        public DbSet<GenericAdvantage> GenericAdvantages { get; set; }
+        public DbSet<SheetDisadvantage> SheetDisadvantages { get; set; }
+        public DbSet<Disadvantage> Disadvantages { get; set; }
+        public DbSet<SheetWeapon> SheetWeapons { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<SheetArmor> SheetArmors { get; set; }
+        public DbSet<Armor> Armors { get; set; }
+        public DbSet<SheetItem> SheetItems { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }
