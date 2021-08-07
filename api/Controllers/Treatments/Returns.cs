@@ -49,7 +49,6 @@ namespace api.Controllers.Treatments
         public static BadRequestObjectResult Error(Exception exception) => new BadRequestObjectResult(new
         {
             result = false,
-            exception,
             message = exception.Message
         });
     }
