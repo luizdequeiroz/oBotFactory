@@ -8,6 +8,7 @@ namespace repository
     {
         public static void InjectRespositories(this IServiceCollection services)
         {
+            services.AddTransient<IGenericRepository<User>, GenericRepository<User>>();
             services.AddTransient<IGenericRepository<MS>, GenericRepository<MS>>();
             services.AddTransient<IGenericRepository<SheetCapabilty>, GenericRepository<SheetCapabilty>>();
             services.AddTransient<IGenericRepository<Capability>, GenericRepository<Capability>>();

@@ -12,6 +12,7 @@ namespace domain
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<MS> MSs { get; set; }
         public DbSet<SheetCapabilty> SheetCapabilties { get; set; }
         public DbSet<Capability> Capabilities { get; set; }
