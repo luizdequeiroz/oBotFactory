@@ -1,12 +1,27 @@
 ﻿using domain.Entities;
 using repository;
 using service.IServiceCluster;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace service.Implementations.ServiceCluster
 {
     internal class UserService : GenericService<User>, IUserService
     {
         public UserService(IGenericRepository<User> genericRepository) : base(genericRepository) { }
+
+        public override async Task<User> SetNewAsync(User entity)
+        {
+            var user = (await genericRepository.SelectWhereAsync(u => u.Username == entity.Username)).FirstOrDefault();
+            if (user != null)
+            {
+                var exception = new Exception("Usuário já cadastrado!");
+                throw exception;
+            }
+
+            return await base.SetNewAsync(entity);
+        }
     }
     internal class MSService : GenericService<MS>, IMSService
     {

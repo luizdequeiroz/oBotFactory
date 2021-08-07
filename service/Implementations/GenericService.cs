@@ -12,30 +12,30 @@ namespace service.Implementations
 {
     internal class GenericService<E> : IGenericService<E> where E : Entity
     {
-        private readonly IGenericRepository<E> genericRepository;
+        protected readonly IGenericRepository<E> genericRepository;
 
         public GenericService(IGenericRepository<E> genericRepository)
         {
             this.genericRepository = genericRepository;
         }
 
-        public async Task<E> SetNewAsync(E entity)
+        public virtual async Task<E> SetNewAsync(E entity)
         {
             return await genericRepository.InsertAsync(entity);
         }
 
-        public async Task<IList<E>> GetAllAsync()
+        public virtual async Task<IList<E>> GetAllAsync()
         {
             var all = await genericRepository.SelectAllAsync();
             return all.ToList();
         }
 
-        public async Task<E> GetByIdAsync(int id)
+        public virtual async Task<E> GetByIdAsync(int id)
         {
             return await genericRepository.SelectByIdAsync(id);
         }
 
-        public async Task<IList<E>> GetByPropertyAsync(string propertyName, string value)
+        public virtual async Task<IList<E>> GetByPropertyAsync(string propertyName, string value)
         {
             var collection = await genericRepository.SelectWhereAsync(item => item.GetType()
                 .GetProperty(propertyName, BindingFlags.SetProperty | BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance)
@@ -43,7 +43,7 @@ namespace service.Implementations
             return collection.ToList();
         }
 
-        public async Task<E> AlterAsync(E entity)
+        public virtual async Task<E> AlterAsync(E entity)
         {
             var original = await GetByIdAsync(entity.Id);
             var exceptions = new List<string>();
@@ -82,7 +82,7 @@ namespace service.Implementations
             return await genericRepository.UpdateAsync(original);
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public virtual async Task<bool> DeleteAsync(int id)
         {
             E result = await GetByIdAsync(id);
             if (result == null) return false;
