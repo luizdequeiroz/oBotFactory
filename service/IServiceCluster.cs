@@ -1,6 +1,12 @@
-﻿namespace service.IServiceCluster
+﻿using domain.Entities;
+using System.Threading.Tasks;
+
+namespace service.IServiceCluster
 {
-    public interface IUserService { }
+    public interface IUserService
+    {
+        Task<User> GetUserByUsernameAsync(string username);
+    }
     public interface IMSService { }
     public interface ISheetCapabiltyService { }
     public interface ICapabilityService { }

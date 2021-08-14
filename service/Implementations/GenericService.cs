@@ -35,14 +35,6 @@ namespace service.Implementations
             return await genericRepository.SelectByIdAsync(id);
         }
 
-        public virtual async Task<IList<E>> GetByPropertyAsync(string propertyName, string value)
-        {
-            var collection = await genericRepository.SelectWhereAsync(item => item.GetType()
-                .GetProperty(propertyName, BindingFlags.SetProperty | BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance)
-                .GetValue(item).ToString() == value);
-            return collection.ToList();
-        }
-
         public virtual async Task<E> AlterAsync(E entity)
         {
             var original = await GetByIdAsync(entity.Id);

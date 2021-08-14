@@ -13,7 +13,7 @@ namespace service.Implementations.ServiceCluster
 
         public override async Task<User> SetNewAsync(User entity)
         {
-            var user = (await genericRepository.SelectWhereAsync(u => u.Username == entity.Username)).FirstOrDefault();
+            var user = await GetUserByUsernameAsync(entity.Username);
             if (user != null)
             {
                 var exception = new Exception("Usuário já cadastrado!");
@@ -21,6 +21,13 @@ namespace service.Implementations.ServiceCluster
             }
 
             return await base.SetNewAsync(entity);
+        }
+
+        public async Task<User> GetUserByUsernameAsync(string username)
+        {
+            var user = (await genericRepository.SelectWhereAsync(u => u.Username == username)).FirstOrDefault();
+
+            return user;
         }
     }
     internal class MSService : GenericService<MS>, IMSService
