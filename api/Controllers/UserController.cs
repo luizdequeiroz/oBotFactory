@@ -31,5 +31,20 @@ namespace api.Controllers
                 return Error(ex);
             }
         }
+
+        [HttpGet("{userId}/MS")]
+        public async Task<IActionResult> ReadUserByUsernameAsync(int userId)
+        {
+            try
+            {
+                var user = await userService.GetByIdWithMSAsync(userId);
+
+                return Success(user);
+            }
+            catch (Exception ex)
+            {
+                return Error(ex);
+            }
+        }
     }
 }

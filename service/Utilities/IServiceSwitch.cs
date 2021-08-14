@@ -11,7 +11,7 @@ namespace service.Utilities
         Func<Task<IList<dynamic>>> GetAllAsync { get; }
         Func<int, Task<dynamic>> GetByIdAsync { get; }
         Func<string, string, Task<IList<dynamic>>> GetByPropertyAsync { get; }
-        Func<object, Task<dynamic>> AlterAsync { get; }
+        Func<int, object, Task<dynamic>> AlterAsync { get; }
         Func<int, Task<bool>> DeleteAsync { get; }
 
         IServiceSwitch Case(ServiceType serviceType);

@@ -1,7 +1,9 @@
 ﻿using domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using repository;
 using service.IServiceCluster;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,7 +11,12 @@ namespace service.Implementations.ServiceCluster
 {
     internal class UserService : GenericService<User>, IUserService
     {
-        public UserService(IGenericRepository<User> genericRepository) : base(genericRepository) { }
+        private readonly IGenericRepository<MS> msRepository;
+
+        public UserService(IGenericRepository<User> genericRepository, IGenericRepository<MS> msRepository) : base(genericRepository) 
+        {
+            this.msRepository = msRepository;
+        }
 
         public override async Task<User> SetNewAsync(User entity)
         {
@@ -26,6 +33,17 @@ namespace service.Implementations.ServiceCluster
         public async Task<User> GetUserByUsernameAsync(string username)
         {
             var user = (await genericRepository.SelectWhereAsync(u => u.Username == username)).FirstOrDefault();
+
+            return user;
+        }
+
+        public async Task<User> GetByIdWithMSAsync(int userId)
+        {
+            var user = await genericRepository.SelectByIdAsync(userId);
+            user.MSs = new List<MS>();
+
+            var MS = (await msRepository.SelectWhereAsync(ms => ms.PlayerId == userId)).FirstOrDefault();
+            user.MSs.Add(MS);
 
             return user;
         }

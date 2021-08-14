@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace domain.Entities
 {
@@ -6,5 +7,7 @@ namespace domain.Entities
     {
         [Required(ErrorMessage = "Nome do usuário obrigatório.")]
         public string Username { get; set; }
+
+        public IList<MS> MSs { get; set; }
     }
 }

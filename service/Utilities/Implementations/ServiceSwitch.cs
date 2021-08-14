@@ -27,7 +27,7 @@ namespace service.Utilities.Implementations
 
         public Func<string, string, Task<IList<dynamic>>> GetByPropertyAsync { get; private set; }
 
-        public Func<object, Task<dynamic>> AlterAsync { get; private set; }
+        public Func<int, object, Task<dynamic>> AlterAsync { get; private set; }
 
         public Func<int, Task<bool>> DeleteAsync { get; private set; }
 
@@ -84,29 +84,29 @@ namespace service.Utilities.Implementations
             GetAllAsync = async () => ((await service.GetAllAsync()) as IEnumerable<dynamic>).ToList();
             GetByIdAsync = async id => await service.GetByIdAsync(id);
             GetByPropertyAsync = async (propertyName, value) => (await service.GetByPropertyAsync(propertyName, value) as IEnumerable<dynamic>).ToList();
-            AlterAsync = async entity =>
+            AlterAsync = async (id, entity) =>
             {
                 var typeServiceType = Type.GetType(string.Format(FullNameEntities, serviceType.ToString()));
 
                 dynamic result = null;
                 switch (typeServiceType.Name)
                 {
-                    case "User": result = await service.AlterAsync(JsonConvert.DeserializeObject<User>(entity.ToString())); break;
-                    case "MS": result = await service.AlterAsync(JsonConvert.DeserializeObject<MS>(entity.ToString())); break;
-                    case "SheetCapabilty": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetCapabilty>(entity.ToString())); break;
-                    case "Capability": result = await service.AlterAsync(JsonConvert.DeserializeObject<Capability>(entity.ToString())); break;
-                    case "SheetSkill": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetSkill>(entity.ToString())); break;
-                    case "Skill": result = await service.AlterAsync(JsonConvert.DeserializeObject<Skill>(entity.ToString())); break;
-                    case "SheetGenericAdvantage": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetGenericAdvantage>(entity.ToString())); break;
-                    case "GenericAdvantage": result = await service.AlterAsync(JsonConvert.DeserializeObject<GenericAdvantage>(entity.ToString())); break;
-                    case "SheetDisadvantage": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetDisadvantage>(entity.ToString())); break;
-                    case "Disadvantage": result = await service.AlterAsync(JsonConvert.DeserializeObject<Disadvantage>(entity.ToString())); break;
-                    case "SheetWeapon": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetWeapon>(entity.ToString())); break;
-                    case "Weapon": result = await service.AlterAsync(JsonConvert.DeserializeObject<Weapon>(entity.ToString())); break;
-                    case "SheetArmor": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetArmor>(entity.ToString())); break;
-                    case "Armor": result = await service.AlterAsync(JsonConvert.DeserializeObject<Armor>(entity.ToString())); break;
-                    case "SheetItem": result = await service.AlterAsync(JsonConvert.DeserializeObject<SheetItem>(entity.ToString())); break;
-                    case "Item": result = await service.AlterAsync(JsonConvert.DeserializeObject<Item>(entity.ToString())); break;
+                    case "User": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<User>(entity.ToString())); break;
+                    case "MS": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<MS>(entity.ToString())); break;
+                    case "SheetCapabilty": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetCapabilty>(entity.ToString())); break;
+                    case "Capability": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Capability>(entity.ToString())); break;
+                    case "SheetSkill": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetSkill>(entity.ToString())); break;
+                    case "Skill": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Skill>(entity.ToString())); break;
+                    case "SheetGenericAdvantage": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetGenericAdvantage>(entity.ToString())); break;
+                    case "GenericAdvantage": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<GenericAdvantage>(entity.ToString())); break;
+                    case "SheetDisadvantage": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetDisadvantage>(entity.ToString())); break;
+                    case "Disadvantage": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Disadvantage>(entity.ToString())); break;
+                    case "SheetWeapon": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetWeapon>(entity.ToString())); break;
+                    case "Weapon": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Weapon>(entity.ToString())); break;
+                    case "SheetArmor": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetArmor>(entity.ToString())); break;
+                    case "Armor": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Armor>(entity.ToString())); break;
+                    case "SheetItem": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<SheetItem>(entity.ToString())); break;
+                    case "Item": result = await service.AlterAsync(id, JsonConvert.DeserializeObject<Item>(entity.ToString())); break;
                 }
 
                 return result;

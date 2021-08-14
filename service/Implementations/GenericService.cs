@@ -35,8 +35,9 @@ namespace service.Implementations
             return await genericRepository.SelectByIdAsync(id);
         }
 
-        public virtual async Task<E> AlterAsync(E entity)
+        public virtual async Task<E> AlterAsync(int id, E entity)
         {
+            entity.Id = id;
             var original = await GetByIdAsync(entity.Id);
             var exceptions = new List<string>();
             entity.GetType().GetProperties().ToList().ForEach(prop =>

@@ -99,8 +99,7 @@ namespace api.Controllers
         {
             try
             {
-                entity.Id = id;
-                var registerUpdated = await serviceSwitch.Case(serviceType).AlterAsync(entity);
+                var registerUpdated = await serviceSwitch.Case(serviceType).AlterAsync(id, entity);
 
                 return Success(registerUpdated, $"Registro de {serviceType.ToDescriptionString()} atualizado com sucesso!");
             }
